@@ -32,6 +32,16 @@ printf 'X5O!P%@AP[4\\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*' >
 python3 antivirus.py /tmp/eicar.txt --sin-cuarentena
 ```
 
+## App Android (APK)
+
+`app/` es la versión nativa en Kotlin (sin dependencias, sin AndroidX):
+elige un archivo o carpeta con el selector del sistema, lo escanea con
+las mismas firmas de `signatures.json` y copia las amenazas a una
+cuarentena interna de la app. No pide permisos.
+
+Cada push a `main` compila el APK debug en GitHub Actions y lo deja
+como artefacto `antivirus-debug`.
+
 ## Límites honestos
 
 Sin protección en tiempo real, sin acceso kernel, sin sandbox dinámico

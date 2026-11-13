@@ -1,0 +1,36 @@
+{
+  "hashes_maliciosos": [
+    "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f"
+  ],
+  "eicar": "X5O!P%@AP[4\\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*",
+  "patrones": [
+    {"nombre": "shell_reversa_dev_tcp", "regex": "/dev/tcp/"},
+    {"nombre": "powershell_ofuscado", "regex": "powershell[^\\n]*(-enc|FromBase64String)"},
+    {"nombre": "eval_ofuscado", "regex": "eval\\s*\\(\\s*(base64_decode|atob|unescape)"},
+    {"nombre": "chmod_permisivo", "regex": "chmod[^\\n]*777"},
+    {"nombre": "curl_pipe_shell", "regex": "(curl|wget)[^\\n]*\\|\\s*(sh|bash)"},
+    {"nombre": "mimikatz_huella", "regex": "mimikatz|sekurlsa::logonpasswords"},
+    {"nombre": "ransom_huella", "regex": "YOUR FILES (HAVE BEEN|ARE) ENCRYPTED|\\.onion[^\\n]*decrypt"},
+    {"nombre": "script_descarga_ejecuta", "regex": "(certutil|bitsadmin)[^\\n]*urlcache|powershell[^\\n]*IEX"},
+    {"nombre": "clave_hardcodeada", "regex": "(aws_secret|api[_-]?key)\\s*=\\s*['\"][A-Za-z0-9/+=]{16,}"}
+  ],
+  "permisos_riesgosos": [
+    "SYSTEM_ALERT_WINDOW",
+    "REQUEST_INSTALL_PACKAGES",
+    "BIND_ACCESSIBILITY_SERVICE",
+    "BIND_DEVICE_ADMIN",
+    "READ_SMS",
+    "SEND_SMS",
+    "PROCESS_OUTGOING_CALLS"
+  ],
+  "sdk_publicitarios": [
+    "applovin",
+    "mopub",
+    "ironsource",
+    "unityads",
+    "startapp",
+    "airpush",
+    "leadbolt",
+    "senddroid"
+  ]
+}
